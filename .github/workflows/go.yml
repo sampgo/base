@@ -14,6 +14,7 @@ jobs:
       CGO_ENABLED: 1
       GOOS: linux
       GOARCH: 386
+      ACCEPT_EULA: y
     steps:
     - uses: actions/checkout@v2
 
