@@ -1,7 +1,15 @@
-$env:CGO_CFLAGS_ALLOW=".*"; 
-$env:CGO_ENABLED=1; 
+$env:CGO_CFLAGS_ALLOW=".*";
+$env:CGO_LDFLAGS_ALLOW=".*";
+$env:CGO_ENABLED="1";
 $env:GOOS="windows"; 
-$env:GOARCH=386;
+$env:GOARCH="386";
 
-go get github.com/sampgo/sampgo@49093e3
-go build -buildmode=c-shared -o build/base.dll main.go
+$DLLWRAP_OUTPUT = "build/dllwrap_base.dll";
+$LD_OUTPUT = "build/gcc_base.dll";
+$GO_OUTPUT = "build/base.dll";
+
+go get github.com/sampgo/sampgo@a193026
+go build -buildmode=c-shared -o $GO_OUTPUT main.go
+
+C:\TDM-GCC-32\bin\dllwrap --def plugin.def -o $DLLWRAP_OUTPUT $GO_OUTPUT
+C:\TDM-GCC-32\bin\ld -Wl","--kill-at -o $LD_OUTPUT $GO_OUTPUT
