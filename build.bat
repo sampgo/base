@@ -1,7 +1,8 @@
 set CGO_CFLAGS_ALLOW=".*"
+set CGO_LDFLAGS_ALLOW=".*"
 set CGO_ENABLED=1
 set GOOS=windows
 set GOARCH=386
 
-go get github.com/sampgo/sampgo@5e54b15
+go get github.com/sampgo/sampgo
 go build -buildmode=c-shared -o build/base.dll main.go 
