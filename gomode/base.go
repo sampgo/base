@@ -1,4 +1,4 @@
-package main
+package base
 
 import (
 	"fmt"
@@ -32,5 +32,3 @@ func init() {
 		return true
 	})
 }
-
-func main() {}

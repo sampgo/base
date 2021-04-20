@@ -1,0 +1,11 @@
+[global]
+  sampctl = true
+
+[author]
+  user = "sampgo"
+  repo = "base"
+
+[package]
+  name = "base"
+  input = "gomode/base.go"
+  output = "../plugins/base.so"

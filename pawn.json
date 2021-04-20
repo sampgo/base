@@ -1,0 +1,10 @@
+{
+	"user": "sampgo",
+	"repo": "base",
+	"entry": "gamemodes/sampgo.pwn",
+	"output": "gamemodes/sampgo.amx",
+	"dependencies": [
+		"sampctl/samp-stdlib"
+	],
+	"local": true
+}
