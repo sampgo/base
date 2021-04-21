@@ -31,7 +31,7 @@ func init() {
 		return true
 	})
 
-	sampgo.On("onPlayerConnect", func(p sampgo.Player) bool {
+	sampgo.On("playerConnect", func(p sampgo.Player) bool {
 		sampgo.Print(fmt.Sprintf("Player ID is %d", p.ID))
 		p.SendMessage(0xFFFFFF, "Welcome to the sampgo base gamemode!")
 		return true
