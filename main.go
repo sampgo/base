@@ -38,7 +38,7 @@ func init() {
 	})
 
 	sampgo.On("playerRequestClass", func(player sampgo.Player, classid int) bool {
-		sampgo.SendClientMessage(player.ID, -1, fmt.Sprintf("Class ID: %d", classid))
+		p.SendMessage(0xFFFFFF, fmt.Sprintf("Class ID: %d", classid))
 		if classid == classids[0] {
 			sampgo.SetPlayerCameraPos(player.ID, -1996.4104, 171.7278, 43.3487)
 			sampgo.SetPlayerCameraLookAt(player.ID, -1997.4143, 171.7207, 42.8887, 0)
